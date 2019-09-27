@@ -7,6 +7,7 @@ PDF Viewer with Pyqt5 and pdfjs
 - pdf.js
 
 download the latest stable version of pdf.js from the [PDF JS Page](https://mozilla.github.io/pdf.js/getting_started/#download)
+
 extract it to the same folder where the script is.
 
 ### Usage:
