@@ -9,7 +9,7 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView
 dir = os.path.dirname(sys.argv[0])
 print(dir)
 PDFJS = "%s%s%s" % ('file://' ,dir, '/pdfjs/web/viewer.html')
-PDF = "%s%s" %("file://", sys.argv[1])
+PDF = "%s%s" %("file://", "%20".join(sys.argv[1:]))
 
 class Window(QWebEngineView):
     def __init__(self):
