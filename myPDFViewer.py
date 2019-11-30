@@ -6,10 +6,9 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import QUrl
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 
-dir = os.path.dirname(sys.argv[0])
-print(dir)
-PDFJS = "%s%s%s" % ('file://' ,dir, '/pdfjs/web/viewer.html')
-PDF = "%s%s" %("file://", sys.argv[1])
+PDFJS = "%s%s" %("file://",os.path.abspath('./pdfjs/web/viewer.html'))
+PDF = "%s%s" %("file://", "%20".join(sys.argv[1:]))
+print("loading PDF File:", PDF)
 
 class Window(QWebEngineView):
     def __init__(self):
@@ -20,6 +19,6 @@ if __name__ == '__main__':
 
     app = QApplication(sys.argv)
     window = Window()
-#    window.setGeometry(0, 0, 800, 600)
     window.showMaximized()
     sys.exit(app.exec_())
+    
