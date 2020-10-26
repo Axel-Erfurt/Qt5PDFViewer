@@ -6,14 +6,15 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import QUrl
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 
-PDFJS = "%s%s" %("file://",os.path.abspath('./pdfjs/web/viewer.html'))
-PDF = "%s%s" %("file://", "%20".join(sys.argv[1:]))
-print("loading PDF File:", PDF)
+PDFJS = f"file://{os.path.abspath('./web/viewer.html')}"
+print(PDFJS)
+PDF = f'file://{"%20".join(sys.argv[1:])}'
+print("loading PDF:", PDF)
 
 class Window(QWebEngineView):
     def __init__(self):
         super(Window, self).__init__()
-        self.load(QUrl.fromUserInput('%s?file=%s' % (PDFJS, PDF)))
+        self.load(QUrl.fromUserInput(f'{PDFJS}?file={PDF}'))
 
 if __name__ == '__main__':
 
