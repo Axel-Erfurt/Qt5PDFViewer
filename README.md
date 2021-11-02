@@ -13,3 +13,9 @@ extract it to the same folder where the script is.
 ### Usage:
 
 > python3 myPDFViever.py /path/to/pdf_file
+
+### using QWebEngineView - myPDFViewer2.py
+
+PyQt5 can now show PDF with QWebEngineView
+
+> python3 myPDFViever2.py /path/to/pdf_file
