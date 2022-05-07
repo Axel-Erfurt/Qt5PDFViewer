@@ -33,7 +33,7 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         win.webView.setUrl(QUrl(f"file://{sys.argv[1]}"))
     else:
-        wd = path.dirname(sys.argv[0])
+        wd = path.dirname(path.abspath(sys.argv[0]))
         test_pdf = "test.pdf"
         win.webView.setUrl(QUrl(f"file://{wd}/{test_pdf}"))
     sys.exit(app.exec())
